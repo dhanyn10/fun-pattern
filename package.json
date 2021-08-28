@@ -6,7 +6,7 @@
     "scripts": {
       "start": "electron ."
     },
-    "repository": "https://github.com/dhanyn10/fun-pattern",
+    "repository": "https://github.com/dhanyn10/fun-pattern.git",
     "author": {
         "name": "Dhany Nurdiansyah",
         "email": "dhanyn.dhan@gmail.com"
