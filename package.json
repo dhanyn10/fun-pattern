@@ -1,0 +1,17 @@
+{
+    "name": "fun-pattern",
+    "version": "0.0.0",
+    "description": "fun pattern",
+    "main": "main.js",
+    "scripts": {
+      "start": "electron ."
+    },
+    "repository": "https://github.com/dhanyn10/fun-pattern",
+    "author": {
+        "name": "Dhany Nurdiansyah",
+        "email": "dhanyn.dhan@gmail.com"
+    },
+    "devDependencies": {
+      "electron": "^13.2.1"
+    }
+  }
