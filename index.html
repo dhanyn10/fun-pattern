@@ -6,14 +6,23 @@
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'"> -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self' *; script-src 'self' * ;style-src 'self' 'unsafe-inline'">
     <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self';style-src 'self' 'unsafe-inline'">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
     <title>Fun Pattern</title>
   </head>
   <body>
-    <input type="text" id="input-canvas">
-    <canvas id="fun-pattern" width="400" height="200" style="border: 1px solid black;">
-      Your browser does not support the HTML5 canvas tag</canvas>
-    <!-- You can also require other files to run in this process -->
+    <div class="container mt-4">
+      <div class="mb-2">
+        <input type="text" class="form-control form-control-sm" id="input-canvas">
+      </div>
+      <div class="mb-2">
+        <canvas id="fun-pattern" width="100" height="40" style="border: 1px solid black;">
+          Your browser does not support the HTML5 canvas tag</canvas>
+      </div>
+      <pre>
+        <code id="result"></code>
+      </pre>
+    </div>
     <script src="./renderer.js"></script>
-    <textarea id="result" cols="40" rows="40"></textarea>
   </body>
 </html>

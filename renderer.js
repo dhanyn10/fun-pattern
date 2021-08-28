@@ -9,11 +9,13 @@ document.getElementById('input-canvas').addEventListener('keypress', function (e
         ctx.font = "40px Arial"
         ctx.fillText(dataInput, 0, 30)
 
+        // console.log("w: ",c.width)
+        // console.log("h: ",c.height)
         var arrImg = []
-        for(let x = 0; x < 40; x++)
+        for(let x = 0; x < c.height; x++)
         {
             let ArrY = []
-            for(let y = 0; y < 40; y++)
+            for(let y = 0; y < c.width; y++)
             {
                 let imgData = ctx.getImageData(y, x, 1, 1)
                 // console.log(imgData.data)
