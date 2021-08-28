@@ -2,8 +2,9 @@ let inputSrc = document.getElementById('input-canvas')
 document.getElementById('input-canvas').addEventListener('keypress', function (e) {
     if(e.key == "Enter")
     {
-        var c = document.getElementById('fun-pattern')
-        var ctx = c.getContext('2d')
+        let c = document.getElementById('fun-pattern')
+        let ctx = c.getContext('2d')
+        ctx.clearRect(0,0, c.width, c.height)
         const dataInput = inputSrc.value.toUpperCase()
         ctx.font = "40px Arial"
         ctx.fillText(dataInput, 0, 30)
@@ -14,7 +15,7 @@ document.getElementById('input-canvas').addEventListener('keypress', function (e
             let ArrY = []
             for(let y = 0; y < 40; y++)
             {
-                let imgData = ctx.getImageData(x, y, 1, 1)
+                let imgData = ctx.getImageData(y, x, 1, 1)
                 // console.log(imgData.data)
                 let appendArrayData = 0
                 let saveWhites = 0
@@ -26,13 +27,14 @@ document.getElementById('input-canvas').addEventListener('keypress', function (e
                 {
                     saveWhites++
                 }
-                for(let arrayRgba = 0; arrayRgba < imgData.data.length; arrayRgba++)
-                {
-                    if(imgData.data[arrayRgba] == 255)
-                    {
-                        saveWhites++
-                    }
-                }
+                //enable this for hole character
+                // for(let arrayRgba = 0; arrayRgba < imgData.data.length; arrayRgba++)
+                // {
+                //     if(imgData.data[arrayRgba] == 255)
+                //     {
+                //         saveWhites++
+                //     }
+                // }
                 if(saveWhites > 0)
                 {
                     ArrY.push(" ")
@@ -41,10 +43,18 @@ document.getElementById('input-canvas').addEventListener('keypress', function (e
                 {
                     ArrY.push("0")
                 }
-                // console.log(ArrY)
             }
             arrImg.push(ArrY)
         }
-        console.log(arrImg)
+        let charOut = ""
+        for(let j = 0; j < arrImg.length; j++)
+        {
+            for(let k = 0; k < arrImg[j].length;k++)
+            {
+                charOut += arrImg[j][k]
+            }
+            charOut += "\n"
+        }
+        document.getElementById('result').innerHTML = charOut
     }
 })
