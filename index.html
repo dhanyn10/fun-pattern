@@ -16,8 +16,11 @@
         <input type="text" class="form-control form-control-sm" id="input-canvas">
       </div>
       <div class="mb-2">
-        <canvas id="fun-pattern" width="100" height="40" style="border: 1px solid black;">
-          Your browser does not support the HTML5 canvas tag</canvas>
+        <canvas id="fun-pattern" width="20" height="40" style="border: 1px solid black;">
+          Your browser does not support the HTML5 canvas tag
+        </canvas>
+        <input type="range" class="form-range" min="0" max="500" step="1" value="20" id="width-canvas">
+        <input type="range" class="form-range" min="0" max="50" step="1" value="10" id="height-canvas">
       </div>
       <pre>
         <code id="result"></code>

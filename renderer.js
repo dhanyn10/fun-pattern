@@ -60,3 +60,10 @@ document.getElementById('input-canvas').addEventListener('keypress', function (e
         document.getElementById('result').innerHTML = charOut
     }
 })
+
+document.getElementById('width-canvas').addEventListener('input', function () {
+    document.getElementById('fun-pattern').setAttribute('width', this.value)
+})
+document.getElementById('height-canvas').addEventListener('input', function () {
+    document.getElementById('fun-pattern').setAttribute('height', this.value)
+})
